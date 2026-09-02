@@ -60,13 +60,24 @@ function buildTabs() {
    stays where it was rather than blinking out and leaving five grey icons. */
 let lastTab = 'home';
 
+let pillPlaced = false;
+
 function movePill(id) {
   if (id) lastTab = id;
   const btn = tabbar.querySelector(`[data-tab="${id || lastTab}"]`);
   if (!btn) { pill.style.opacity = '0'; return; }
+
+  /* The first placement must not animate: the pill starts at width 0 on the
+     left and would sweep the whole bar while the app is still opening. */
+  if (!pillPlaced) pill.style.transition = 'none';
   pill.style.opacity = '1';
   pill.style.width = btn.offsetWidth + 'px';
   pill.style.transform = `translateX(${btn.offsetLeft - pill.offsetLeft}px)`;
+  if (!pillPlaced) {
+    void pill.offsetWidth;
+    pill.style.transition = '';
+    pillPlaced = true;
+  }
   $$('.tab', tabbar).forEach((b) => b.classList.toggle('on', b === btn));
 }
 
