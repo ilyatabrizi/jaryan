@@ -1,6 +1,7 @@
 /* Shared pieces: the derived event model, the two card shapes, sheets,
    toasts. Views compose these and never touch the DOM twice for the same
    thing. */
+import { BRAND, AGENCY } from './config.js';
 import { EVENTS, CATEGORIES } from './data.js';
 import { icon } from './icons.js';
 import { $, esc, atDay, dayOf, monthOf, relDay, toman, num, timeRange } from './util.js';
@@ -160,3 +161,30 @@ export const factRow = (e) => `
     <div class="fact">${icon('users', 18)}<b>${e.full ? 'تکمیل' : num(e.left)}</b>
       <span>${e.full ? 'ظرفیت پر شد' : 'جای خالی'}</span></div>
   </div>`;
+
+/* ---------------------------------------------------------------- footer */
+/* Both screens that end in a footer were repeating it. The agency signature
+   is its own block below a hairline, not a few words tacked onto the note —
+   the wordmark already reads "alpha", so the text beside it carries the rest
+   of the phrase instead of saying the name twice. */
+export const siteFoot = (wordmark, note) => `
+  <footer class="foot">
+    <div class="mark">${wordmark}</div>
+    <div>${esc(BRAND.address)}</div>
+    <div><a href="${BRAND.instagramUrl}" target="_blank" rel="noopener"
+      class="ltr">@${esc(BRAND.instagram)}</a></div>
+
+    <div class="foot-sig">
+      <a class="alphasig" href="${AGENCY.url}" target="_blank" rel="noopener"
+         aria-label="${esc(AGENCY.by)} ${esc(AGENCY.name)}">
+        <img class="alphasig__mark" src="${AGENCY.logo}" alt=""
+             width="440" height="335" loading="lazy" decoding="async">
+        <span class="alphasig__txt">
+          <span class="alphasig__by">${esc(AGENCY.by)}</span>
+          <span class="alphasig__name ltr">${esc(AGENCY.name)}</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="note">${esc(note)}</div>
+  </footer>`;

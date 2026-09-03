@@ -3,7 +3,7 @@ import { ABOUT, FAQ } from '../data.js';
 import { icon } from '../icons.js';
 import { WORDMARK } from '../wordmark.js';
 import { esc, num } from '../util.js';
-import { getEvent, openSheet, closeSheet, toast } from '../ui.js';
+import { getEvent, openSheet, closeSheet, toast, siteFoot } from '../ui.js';
 import { state, setProfile } from '../store.js';
 
 const initial = (name) => (name || 'ج').trim().charAt(0) || 'ج';
@@ -113,11 +113,7 @@ export default {
     </div>
   </div>
 
-  <footer class="foot">
-    <div class="mark">${WORDMARK}</div>
-    <div>${esc(BRAND.address)}</div>
-    <div class="note">نمونهٔ اولیه برای بررسی — نسخهٔ ۱</div>
-  </footer>
+  ${siteFoot(WORDMARK, 'نمونهٔ اولیه برای بررسی — نسخهٔ ۱')}
 </section>`;
   },
 

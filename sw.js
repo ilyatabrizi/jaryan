@@ -4,7 +4,7 @@
    photos and the hero clip are cached as they are first seen, so a second
    visit on a bad connection still opens instantly without paying 1.4MB of
    video up front. */
-const V = 'jaryan-v2';
+const V = 'jaryan-v3';
 const SHELL = [
   './', 'index.html', 'css/app.css', 'manifest.webmanifest',
   'js/app.js', 'js/config.js', 'js/data.js', 'js/hero.js', 'js/icons.js',

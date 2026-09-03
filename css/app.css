@@ -779,7 +779,26 @@ a{color:inherit;text-decoration:none}
   line-height:2}
 .foot .mark{width:74px;margin:0 auto 14px;opacity:.5}
 .foot a{color:var(--sage-deep);font-weight:500}
-.foot .note{margin-top:12px;font-size:11px;opacity:.75}
+.foot .note{margin-top:16px;font-size:11px;opacity:.75}
+
+/* The agency signature. Its own block under a hairline, louder than the note
+   beside it — this is the maker's mark. The artwork bleeds to its own edges
+   with no built-in padding, so all the spacing comes from here. */
+.foot-sig{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.alphasig{
+  display:inline-flex;align-items:center;gap:14px;
+  color:var(--ink);transition:opacity .25s var(--ease);
+}
+.alphasig:hover{opacity:.72}
+.alphasig:active{opacity:.6}
+/* Below about 70px the stacked alp/ha lockup closes up and the two yellow
+   bars turn to mush. */
+.alphasig__mark{width:clamp(72px,19vw,88px);height:auto;flex:0 0 auto}
+.alphasig__txt{display:grid;gap:3px;text-align:start}
+.alphasig__by{font-size:10.5px;font-weight:400;color:var(--ink-3);line-height:1.5}
+.alphasig__name{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1;
+  color:var(--ink)}
+.foot .alphasig__name{color:var(--ink)}
 
 /* install nudge */
 .install{

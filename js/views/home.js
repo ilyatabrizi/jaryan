@@ -3,7 +3,7 @@ import { CATEGORIES } from '../data.js';
 import { icon } from '../icons.js';
 import { WORDMARK } from '../wordmark.js';
 import { esc, num, toman } from '../util.js';
-import { upcoming, eventCard, eventRow, shot } from '../ui.js';
+import { upcoming, eventCard, eventRow, shot, siteFoot } from '../ui.js';
 import { mountHero } from '../hero.js';
 
 export default {
@@ -105,13 +105,7 @@ export default {
     </div>
   </div>
 
-  <footer class="foot">
-    <div class="mark">${WORDMARK}</div>
-    <div>${esc(BRAND.address)}</div>
-    <div><a href="${BRAND.instagramUrl}" target="_blank" rel="noopener"
-        class="ltr">@${esc(BRAND.instagram)}</a></div>
-    <div class="note">نمونهٔ اولیه — قیمت‌ها و تاریخ‌ها آزمایشی است.</div>
-  </footer>
+  ${siteFoot(WORDMARK, 'نمونهٔ اولیه — قیمت‌ها و تاریخ‌ها آزمایشی است.')}
 </section>`;
   },
 

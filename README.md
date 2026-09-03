@@ -86,6 +86,11 @@ in for it.
 State lives in one `localStorage` blob. There is no account and no server:
 a phone that clears its storage starts fresh.
 
+Both footers come from one `siteFoot()` in `ui.js` and carry the **Alpha
+Agency signature** — the black cut of the wordmark master, because this footer
+sits on paper rather than on ink, with «طراحی و توسعه در» beside it. Same
+lockup as the one on `codeconceptcafe.com`.
+
 ---
 
 ## The Persian
@@ -139,7 +144,7 @@ index.html            the shell: boot veil, two glass bars, one <main>
 css/app.css           the whole design system
 js/app.js             boot, routing, the bars, one click delegate
 js/router.js          hash routes with a scroll memory
-js/ui.js              the derived event model, cards, sheets, toasts
+js/ui.js              the derived event model, cards, sheets, toasts, the footer
 js/data.js            the catalogue
 js/store.js           the localStorage blob
 js/util.js            Intl money and Jalali dates, the ticket pattern
